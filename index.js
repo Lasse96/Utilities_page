@@ -1,5 +1,5 @@
 /** Fibonacci-numbers */
-import fibonacci from "./utils/fibonacci.mjs";
+import fibonacci from "./Utils/fibonacci.mjs";
 //console.log("f(5): ", fibonacci(5)); // 5
 document.getElementById("submit-fib").addEventListener("click", () => {
   let n = document.getElementById("fib").value;
