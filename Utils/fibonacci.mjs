@@ -1,9 +1,10 @@
+/**
+ * Source: https://en.wikipedia.org/wiki/Fibonacci_number
+ */
 export default function fibonacci(n) {
-  console.log("fib", n);
+  //console.log("fib", n);
   let fib = [0, 1];
-  if (n < 2) {
-    return fib[n];
-  }
+  if (n < 2) return fib[n];
   for (let i = 2; i <= n; i++) {
     fib[i] = fib[i - 1] + fib[i - 2];
   }
