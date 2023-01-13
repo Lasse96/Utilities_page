@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilities</title>
+    <script type="module" src="index.js" defer></script>
+</head>
+<body style="background-color: black; color: snow;">
+    <h1>Utilities</h1>
+
+    <hr>
+    <h2>Fibonacci numbers</h2>
+    <label for="fib">
+        Find the n'th fibonacci number
+    </label>
+    <input type="number" name="fib" id="fib" min="0" max="100">
+    <button type="submit" id="submit-id">Get F<sub>n</sub></button>
+    <span id="fib-result"></span>
+    
+    <hr>
+    <h2>Temperature converter</h2>
+    <p>Convert temperatures between °C and °F</p>
+    <input type="number" id="temp" name="temp">
+    <input type="radio" name="temp-type" id="celcius">
+    <label for="celcius">°C</label>
+    <input type="radio" name="temp-type" id="farenheit">
+    <label for="farenheit">°F</label>
+    <button type="submit" id="sumbit-temp">Convert</button>
+    <span id="temp-result"></span>
+
+    <hr>
+    <h2>Currency converter</h2>
+    <input type="number" name="amount" id="amount" placeholder="100">
+    <label for="convertFrom">From:</label>
+    <input list="convertFromSymbols" name="convertFrom" id="convertFrom" placeholder="Type a currency code">
+    <datalist id="convertFromSymbols">
+        <option value="NOK">Norske kroner (NOK)</option>
+        <option >EUR</option>
+        <option >GBP</option>
+        <option >USD</option>
+    </datalist>
+    <label for="convertTo">To:</label>
+    <input list="convertToSymbols" name="convertTo" id="convertTo" placeholder="Type a currency code">
+    <datalist id="convertToSymbols">
+        <option >NOK</option>
+        <option >EUR</option>
+        <option >GBP</option>
+        <option >USD</option>
+    </datalist>
+    <button type="submit" id="submit-currency">Convert</button>
+    <span id="currency-result"></span>
+
+    <hr>
+    <h2>Filter/Seatch Amiibos</h2>
+    <input placeholder="Search for Amiibos" name="search-amiibos" id="search-amiibos">
+    Include search for:
+    <label for="amiibo-name">Full Name</label><input type="checkbox" name="amiibo-name" id="amiibo-name">
+    <label for="amiibo-game">Game Series</label><input type="checkbox" name="amiibo-game" id="amiibo-game">
+    <label for="amiibo-series">Amiibo Series</label><input type="checkbox" name="amiibo-series" id="amiibo-series">
+
+    <button id="openAll">Open all boxes</button>
+    <button id="closeAll">Close all boxes</button>
+
+    <div id="amiibos" style="display: grid; grid-template-columns: auto auto auto auto; margin-top: 20px;"></div>
+</body>
+</html>
