@@ -43,7 +43,7 @@ const toCurrencyList = document.getElementById("convertToSymbols");
 
 getAllCurrencies(fromCurrencyList, toCurrencyList);
 
-import { getAllAmiibos, filterAmiibos } from "./Utils/amiibos.mjs";
+import { getAllAmiibos, filterAmiibos } from "./Utils/amiibo.mjs";
 const outputElement = document.getElementById("amiibos");
 getAllAmiibos(outputElement);
 
