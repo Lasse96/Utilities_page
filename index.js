@@ -1,14 +1,18 @@
-import fibonacci from "./Utils/fibonacci.mjs";
-
-document.getElementById("submit-id").addEventListener("click", () => {
+/** Fibonacci-numbers */
+import fibonacci from "./utils/fibonacci.mjs";
+//console.log("f(5): ", fibonacci(5)); // 5
+document.getElementById("submit-fib").addEventListener("click", () => {
   let n = document.getElementById("fib").value;
   let fn = fibonacci(n);
-  document.getElementById("fib-result").innerHTML = `F<sub>${n} = ${fn}`;
+  document.getElementById("fib-result").innerHTML = `F<sub>${n}</sub> = ${fn}`;
 });
 
-import { celciusToFarenheit, farenheitToCelcius } from "./Utils/temp.mjs";
-
-document.getElementById("sumbit-temp").addEventListener("click", () => {
+/** Temperature converter */
+import {
+  celciusToFarenheit,
+  farenheitToCelcius,
+} from "./utils/temperature.mjs";
+document.getElementById("submit-temp").addEventListener("click", () => {
   const out = document.getElementById("temp-result");
   const temp = document.getElementById("temp").value;
   const radioButtons = document.querySelectorAll('input[name="temp-type"]');
@@ -24,11 +28,12 @@ document.getElementById("sumbit-temp").addEventListener("click", () => {
   } else if (fromType === "farenheit") {
     out.innerHTML = `${temp}°F = ${farenheitToCelcius(temp)}°C`;
   } else {
-    out.innerText = "Something wrong";
+    out.innerText = "Her er det noe muffens!";
   }
 });
 
-import { currencyConverter, getAllCurrencies } from "./Utils/currency.mjs";
+/** Currency converter */
+import { currencyConverter, getAllCurrencies } from "./utils/currency.mjs";
 document.getElementById("submit-currency").addEventListener("click", () => {
   const out = document.getElementById("currency-result");
   let amount = document.getElementById("amount").value;
@@ -40,12 +45,15 @@ document.getElementById("submit-currency").addEventListener("click", () => {
 
 const fromCurrencyList = document.getElementById("convertFromSymbols");
 const toCurrencyList = document.getElementById("convertToSymbols");
-
 getAllCurrencies(fromCurrencyList, toCurrencyList);
+//getAllCurrencies();
 
-import { getAllAmiibos, filterAmiibos } from "./Utils/amiibo.mjs";
-const outputElement = document.getElementById("amiibos");
-getAllAmiibos(outputElement);
+/**
+ * Amiibos
+ */
+import { getAllAmiibos, filterAmiibos } from "./utils/amiibo.mjs";
+const outPutElement = document.getElementById("amiibos");
+getAllAmiibos(outPutElement);
 
 let searchBox = document.getElementById("search-amiibos");
 searchBox.addEventListener("input", updateSearch);
@@ -56,32 +64,32 @@ nameCheckBox.addEventListener("input", updateSearch);
 let gameSeriesCheckBox = document.getElementById("amiibo-game");
 gameSeriesCheckBox.addEventListener("input", updateSearch);
 
-let amiiboSeriesCheckBox = document.getElementById("amiibo-series");
-amiiboSeriesCheckBox.addEventListener("input", updateSearch);
+let amiiboSeriesCheckbox = document.getElementById("amiibo-series");
+amiiboSeriesCheckbox.addEventListener("input", updateSearch);
 
 function updateSearch() {
   let searchString = searchBox.value;
   let nameOpt = nameCheckBox.checked;
   let gameSeriesOpt = gameSeriesCheckBox.checked;
-  let amiiboSeriesOpt = amiiboSeriesCheckBox.checked;
+  let amiiboSeriesOpt = amiiboSeriesCheckbox.checked;
 
   let options = { nameOpt, gameSeriesOpt, amiiboSeriesOpt };
-
-  console.log(`Search for ${searchString}`, options);
-
-  filterAmiibos(searchString, outputElement, options);
+  //console.log(`Will search for ${searchString}`);
+  console.log(`Will search for ${searchString}`, options);
+  //filterAmiibos(searchString, outPutElement);
+  filterAmiibos(searchString, outPutElement, options);
 }
 
 document.getElementById("openAll").addEventListener("click", () => {
   toggleDetails("open");
 });
-
 document.getElementById("closeAll").addEventListener("click", () => {
   toggleDetails("close");
 });
 
 function toggleDetails(mode) {
   let detailsElements = document.querySelectorAll("details");
+  //console.log(detailsElements.length);
   for (let element of detailsElements) {
     if (mode === "open") element.setAttribute("open", true);
     if (mode === "close") element.removeAttribute("open");
