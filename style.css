@@ -1,0 +1,5 @@
+div#amiibos{
+    display: grid; 
+    grid-template-columns: auto auto auto auto; 
+    margin-top: 20px;
+}

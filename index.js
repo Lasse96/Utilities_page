@@ -1,3 +1,5 @@
+import "./style.css";
+
 /** Fibonacci-numbers */
 import fibonacci from "./utils/fibonacci.mjs";
 //console.log("f(5): ", fibonacci(5)); // 5
